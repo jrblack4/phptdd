@@ -1,10 +1,11 @@
 <?php
+
 namespace Animal;
+
 class Dog
 {
-  public function returnSound(): string
-  {
-    return "Bark";
-  }
+    public function returnSound(): string
+    {
+        return "Bark";
+    }
 }
-?>
