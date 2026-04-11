@@ -6,7 +6,10 @@ class Display
 {
     public function outputSound(): void
     {
-        $dog = new Dog();
-        echo $dog->returnSound();
+        $dog1 = new Dog();
+        $dog2 = clone $dog1;
+
+        $dog1->setSound("Barky Bark");
+        echo $dog2->returnSound();
     }
 }
