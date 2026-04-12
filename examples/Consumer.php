@@ -2,20 +2,21 @@
 
 namespace Animal;
 
-use Animal\Dogs\Cavoodle;
+use Animal\Cavoodle;
 
 class Consumer
 {
-    public function sayHello()
+    public function sayHello(): void
     {
         $dog = new Dog();
         $dog->setSound("Wooof!");
         $dog->makeSound();
     }
-    public function sayHelloCavoodle()
+
+    public function sayHelloCavoodle(): void
     {
         $cavoodle = new Cavoodle();
-        $cavoodle->setSound("bark bark!");
+        $cavoodle->setSound("Bark Bark!");
         $cavoodle->makeSound();
     }
 }

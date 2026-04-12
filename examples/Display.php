@@ -1,15 +1,34 @@
 <?php
 
-namespace Animal;
+namespace Polymorphism\InterfaceExample;
+
+use Polymorphism\InterfaceExample\PrinterInterface;
 
 class Display
 {
-    public function outputSound(): void
+    /**
+    * @var PrinterInterface
+    */
+    private $printer;
+    public function __construct(PrinterInterface $printer)
     {
-        $dog1 = new Dog();
-        $dog2 = clone $dog1;
+        $this->setPrinter($printer);
+    }
 
-        $dog1->setSound("Barky Bark");
-        echo $dog2->returnSound();
+    public function displayOutput(string $message): string
+    {
+        $printerOutput = $this->getPrinter()->print($message);
+        $displayOutput = "My output is: " . $printerOutput;
+        return $displayOutput;
+    }
+
+    public function getPrinter(): PrinterInterface
+    {
+        return $this->printer;
+    }
+
+    public function setPrinter(PrinterInterface $printer): void
+    {
+        $this->printer = $printer;
     }
 }

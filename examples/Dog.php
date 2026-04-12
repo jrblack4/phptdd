@@ -17,7 +17,7 @@ class Dog
         $suffix = "World";
         return $prefix . $this->getSound() . $suffix;
     }
-    public function getSound(): string
+    private function getSound(): string
     {
         return $this->sound;
     }
@@ -25,11 +25,11 @@ class Dog
     {
         $this->sound = $sound;
     }
-    public function getColor(): string
+    protected function getColor(): string
     {
         return $this->color;
     }
-    public function setColor(string $color): void
+    protected function setColor(string $color): void
     {
         $this->color = $color;
     }
